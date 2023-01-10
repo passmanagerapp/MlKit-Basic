@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragment_main">
+
+    <fragment
+        android:id="@+id/fragment_text_recognazier"
+        android:name="com.akilincarslan.mlkit.textrecognizer.TextRecognizerFragment"
+        android:label="Text Recognizer"
+        tools:layout="@layout/fragment_text_recognizer">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_main"
+        android:name="com.akilincarslan.mlkit.main.MainFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_fragment_main_to_fragment_text_recognazier"
+            app:destination="@id/fragment_text_recognazier" />
+        <action
+            android:id="@+id/action_fragment_main_to_faceDetectorFragment"
+            app:destination="@id/faceDetectorFragment" />
+        <action
+            android:id="@+id/action_fragment_main_to_barcodeScannerFragment"
+            app:destination="@id/barcodeScannerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/faceDetectorFragment"
+        android:name="com.akilincarslan.mlkit.facedetector.FaceDetectorFragment"
+        android:label="Face Contor Detector"
+        tools:layout="@layout/fragment_face_detector" />
+    <fragment
+        android:id="@+id/barcodeScannerFragment"
+        android:name="com.akilincarslan.mlkit.barcode.BarcodeScannerFragment"
+        android:label="Barcode Scanner" />
+
+</navigation>
